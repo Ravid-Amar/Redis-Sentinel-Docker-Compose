@@ -1,4 +1,4 @@
-FROM redis:6-alpine
+FROM redis:latest
  
 ENV SENTINEL_QUORUM 1
 ENV SENTINEL_DOWN_AFTER 1000
