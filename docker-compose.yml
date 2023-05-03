@@ -28,7 +28,7 @@ services:
     depends_on:
       - redis-master 
     network_mode: host
-    container_name: sentinel1
+    container_name: sentinel-1
 
   # Instance 2
 #  redis-sentinel2:
