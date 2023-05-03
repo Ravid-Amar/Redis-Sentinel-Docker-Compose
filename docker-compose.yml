@@ -11,14 +11,14 @@ services:
     network_mode: host
     container_name: redis-master
   
-  redis-slave:
-    image: redis:latest
-    command: redis-server --slaveof <MASTER HOST IP> 6379
-#   links: #    - redis-master
-    volumes:
-      - "./.data:/data"
-    network_mode: host
-    container_name: redis-slave
+#  redis-slave:
+#    image: redis:latest
+#    command: redis-server --slaveof <MASTER HOST IP> 6379
+##   links: #    - redis-master
+#    volumes:
+#      - "./.data:/data"
+#   network_mode: host
+#    container_name: redis-slave
 
    
   # Instance 1
@@ -29,17 +29,3 @@ services:
       - redis-master 
     network_mode: host
     container_name: sentinel-1
-
-  # Instance 2
-#  redis-sentinel2:
-#    build: 
-#      context: ./redis-sentinel
-#    links:
-#      - redis-master
- 
-  # Instance 3
-#  redis-sentinel3:
-#    build: 
-#     context: ./redis-sentinel
-#   links:
-#      - redis-master
